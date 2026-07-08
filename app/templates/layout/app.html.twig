@@ -8,11 +8,11 @@
 {% endblock %}
 
 {% block body %}
-    <twig:Banner title="{{ block('banner_title') }}" subtitle="{{ block('banner_subtitle') }}" />
     <twig:Menu />
+    <twig:Banner title="{{ block('banner_title') }}" subtitle="{{ block('banner_subtitle') }}" />
     <twig:FlashPopup />
 
-    <main class="page">
+    <main>
         {% block page_body %}{% endblock %}
     </main>
 {% endblock %}

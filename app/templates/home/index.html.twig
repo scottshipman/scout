@@ -6,6 +6,43 @@
 
 {% block page_stylesheets %}
 <style>
+    .about-hero {
+        position: relative;
+        background-image: url('{{ asset('images/hero1.png') }}');
+        background-size: cover;
+        background-position: left center;
+        min-height: 420px;
+        display: flex;
+        align-items: center;
+    }
+
+    .about-hero__content {
+        max-width: 320px;
+        padding: 1.5rem 1.5rem 1.5rem 0;
+        color: #1a1f27;
+    }
+
+    .about-hero__content h2 {
+        margin-top: 0;
+    }
+
+    .about-hero__content p {
+        margin: 0;
+        line-height: 1.6;
+    }
+
+    @media (max-width: 640px) {
+        .about-hero {
+            min-height: 480px;
+        }
+
+        .about-hero__content {
+            max-width: 65%;
+            padding: 1rem 1rem 1rem 0;
+            font-size: 0.85rem;
+        }
+    }
+
     .experience-item {
         margin-bottom: 1rem;
     }
@@ -16,20 +53,11 @@
 
     .experience-item .role {
         font-weight: 600;
+        font-size: 1.05rem;
     }
 
     .experience-item .org {
         color: #4b5563;
-    }
-
-    .experience-item .dates {
-        color: #6b7280;
-        font-size: 0.9rem;
-    }
-
-    .experience-item ul {
-        margin: 0.5rem 0 0;
-        padding-left: 1.25rem;
     }
 
     .pill-list {
@@ -42,8 +70,9 @@
     }
 
     .pill-list li {
-        background: #eaf2fb;
-        color: #0a66c2;
+        background: #fff;
+        border: 1px solid var(--color-border);
+        color: var(--color-primary-dark);
         border-radius: 999px;
         padding: 0.35rem 0.85rem;
         font-size: 0.9rem;
@@ -61,102 +90,144 @@
         transform: scale(1.08);
     }
 
-    blockquote {
+    .testimonial {
+        max-width: 640px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .testimonial blockquote {
         margin: 0;
-        padding-left: 1rem;
-        border-left: 3px solid #0a66c2;
         color: #374151;
         font-style: italic;
+        font-size: 1.3rem;
+        line-height: 1.6;
     }
 
-    .cta {
-        text-align: center;
-        margin-top: 2rem;
+    .section--cta .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.25rem;
     }
 
-    .cta a {
+    .section--cta p {
+        margin: 0;
+        font-size: 1.1rem;
+        opacity: 0.92;
+    }
+
+    .section--cta a {
         display: inline-block;
-        background: #0a66c2;
-        color: #fff;
+        background: #fff;
+        color: var(--color-primary-dark);
         text-decoration: none;
-        font-weight: 600;
-        padding: 0.75rem 1.75rem;
+        font-weight: 700;
+        padding: 0.85rem 2rem;
         border-radius: 999px;
-        transition: background 0.15s ease-in-out;
+        transition: transform 0.15s ease-in-out;
     }
 
-    .cta a:hover {
-        background: #084e96;
+    .section--cta a:hover {
+        transform: scale(1.04);
     }
 </style>
 {% endblock %}
 
 {% block page_body %}
-    <section class="card">
-        <h2>About</h2>
-        <p>
-            I'm Kenneth Scott Shipman, a software development leader with a track record of
-            architecting cloud solutions and guiding engineering teams from planning through
-            delivery. I combine hands-on AWS cloud experience with disciplined project and
-            process leadership, and colleagues describe me as someone who can "impart knowledge
-            without making one feel inadequate" and who consistently gets things done. I'm
-            looking to bring that same blend of technical depth and people-first leadership to
-            an Engineering Manager role.
-        </p>
-    </section>
-
-    <section class="card">
-        <h2>Current Role</h2>
-        <div class="experience-item">
-            <div class="role">Software Development Leader &amp; Solutions Architect</div>
-            <div class="org">Pompa Program</div>
+    <section class="about-hero">
+        <div class="container">
+            <div class="about-hero__content">
+                <h2 class="section__heading">About</h2>
+                <p>
+                    I'm Kenneth Scott Shipman, a software development leader with a track record of
+                    architecting cloud solutions and guiding engineering teams from planning through
+                    delivery. I combine hands-on AWS cloud experience with disciplined project and
+                    process leadership, and colleagues describe me as someone who "is a solid developer
+                     and lead engineer, possessing a vast wealth of knowledge in this field." and "who 
+                     consistently gets things done." I'm
+                    looking to bring that same blend of technical depth and people-first leadership to
+                    an Software organization.
+                </p>
+            </div>
         </div>
     </section>
 
-    <section class="card">
-        <h2>Certifications</h2>
-        <ul class="pill-list">
-            <li class="pill-item">AWS Certified Cloud Practitioner (2023–2026)</li>
-            <li class="pill-item">Certified ScrumMaster (CSM)</li>
-            <li class="pill-item">Project Management Professional (PMP)</li>
-            <li class="pill-item">ITIL Foundations</li>
-        </ul>
-
-    </section>
-        <section class="card">
-        <h2>Skills</h2>
-        <ul class="pill-list">
-            <li class="pill-item">AWS - Lambda, ECS (fargate), API Gateway, Aurora RDS, DnamoDB, IAM, VPC, Security Groups etc</li>
-            <li class="pill-item">PHP - Symfony, Laravel </li>
-            <li class="pill-item">Javascript / Typescript - Vue.js, node.js, react, next.js, nest.js</li>
-            <li class="pill-item">AGILE - Scrum and Kanban</li>
-            <li class="pill-item">Docker</li>
-            <li class="pill-item">People Management</li>
-            <li class="pill-item">Microservice Architecture</li>
-            <li class="pill-item">AI Development - Claude Code CLI, Composer, Co-Pilot</li>
-            <li class="pill-item">AI features - MCP integrations, LLM integration</li>
-            <li class="pill-item">Sass / Paas</li>
-            <li class="pill-item">APIs - Restful API development</li>
-        </ul>
+    <section class="section">
+        <div class="container">
+            <h2 class="section__heading">Current Role</h2>
+            <div class="experience-item">
+                <div class="role">Software Development Leader &amp; Solutions Architect</div>
+                <div class="org">Pompa Program</div>
+            </div>
+        </div>
     </section>
 
-    <section class="card">
-        <h2>Education</h2>
-        <p>MBA - University of Maryland, 2000–2004</p>
-        <p>BA - Old Dominion University, 1988–1992</p>
+    <section class="section section--alt">
+        <div class="container">
+            <h2 class="section__heading">Certifications</h2>
+            <ul class="pill-list">
+                <li class="pill-item">AWS Certified Cloud Practitioner (2023–2026)</li>
+                <li class="pill-item">Certified ScrumMaster (CSM)</li>
+                <li class="pill-item">Project Management Professional (PMP)</li>
+                <li class="pill-item">ITIL Foundations</li>
+            </ul>
+        </div>
     </section>
 
-    <section class="card">
-        <h2>What Colleagues Say</h2>
-        <blockquote>
-            "He has a gift for imparting knowledge without making you feel inadequate, and he
-            gets things done."
-        </blockquote>
+    <section class="section">
+        <div class="container">
+            <h2 class="section__heading">Skills</h2>
+            <ul class="pill-list">
+                <li class="pill-item">AWS - Lambda, ECS (fargate), API Gateway, Aurora RDS, DnamoDB, IAM, VPC, Security Groups etc</li>
+                <li class="pill-item">PHP - Symfony, Laravel </li>
+                <li class="pill-item">Javascript / Typescript - Vue.js, node.js, react, next.js, nest.js</li>
+                <li class="pill-item">AGILE - Scrum and Kanban</li>
+                <li class="pill-item">Docker</li>
+                <li class="pill-item">People Management</li>
+                <li class="pill-item">Microservice Architecture</li>
+                <li class="pill-item">AI Development - Claude Code CLI, Composer, Co-Pilot</li>
+                <li class="pill-item">AI features - MCP integrations, LLM integration</li>
+                <li class="pill-item">Sass / Paas</li>
+                <li class="pill-item">APIs - Restful API development</li>
+            </ul>
+        </div>
     </section>
 
-    <div class="cta">
-        <a href="https://www.linkedin.com/in/kscottshipman/" target="_blank" rel="noopener">
-            View Full LinkedIn Profile
-        </a>
-    </div>
+    <section class="section section--alt">
+        <div class="container">
+            <h2 class="section__heading">Education</h2>
+            <p>MBA - University of Maryland, 2000–2004</p>
+            <p>BA - Old Dominion University, 1988–1992</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="testimonial">
+                <h2 class="section__heading">What Colleagues Say</h2>
+                <blockquote>
+                    "In the development world, the most difficult challenges we face are often 
+                    not in code, but in process, communication, or office politics. I feel that 
+                    Scott is more aware of this than most of us. He strives to solve such problems 
+                    when he sees them, which is to be commended!"
+                </blockquote>
+                <p>
+                    <a href="https://www.linkedin.com/in/kscottshipman/details/recommendations/?detailScreenTabIndex=0" target="_blank">
+                    See more recommendations
+                    </a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--cta">
+        <div class="container">
+            <h2 class="section__heading">Let's Connect</h2>
+            <p>Want the full picture? Take a look at my complete professional history.</p>
+            <a href="https://www.linkedin.com/in/kscottshipman/" target="_blank" rel="noopener">
+                View Full LinkedIn Profile
+            </a>
+        </div>
+    </section>
 {% endblock %}
