@@ -1,0 +1,162 @@
+{% extends 'layout/app.html.twig' %}
+
+{% block title %}Kenneth Scott Shipman — Lead Architect Candidate{% endblock %}
+
+{% block banner_subtitle %}Candidate for Lead Architect · Experienced Software Development Leader & Solutions Architect, AWS Cloud{% endblock %}
+
+{% block page_stylesheets %}
+<style>
+    .experience-item {
+        margin-bottom: 1rem;
+    }
+
+    .experience-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .experience-item .role {
+        font-weight: 600;
+    }
+
+    .experience-item .org {
+        color: #4b5563;
+    }
+
+    .experience-item .dates {
+        color: #6b7280;
+        font-size: 0.9rem;
+    }
+
+    .experience-item ul {
+        margin: 0.5rem 0 0;
+        padding-left: 1.25rem;
+    }
+
+    .pill-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .pill-list li {
+        background: #eaf2fb;
+        color: #0a66c2;
+        border-radius: 999px;
+        padding: 0.35rem 0.85rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+
+    .pill-item {
+        display: inline-block;
+        transition: color 0.15s ease-in-out, transform 0.15s ease-in-out;
+        cursor: default;
+    }
+
+    .pill-item:hover {
+        color: #16a34a;
+        transform: scale(1.08);
+    }
+
+    blockquote {
+        margin: 0;
+        padding-left: 1rem;
+        border-left: 3px solid #0a66c2;
+        color: #374151;
+        font-style: italic;
+    }
+
+    .cta {
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+    .cta a {
+        display: inline-block;
+        background: #0a66c2;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 0.75rem 1.75rem;
+        border-radius: 999px;
+        transition: background 0.15s ease-in-out;
+    }
+
+    .cta a:hover {
+        background: #084e96;
+    }
+</style>
+{% endblock %}
+
+{% block page_body %}
+    <section class="card">
+        <h2>About</h2>
+        <p>
+            I'm Kenneth Scott Shipman, a software development leader with a track record of
+            architecting cloud solutions and guiding engineering teams from planning through
+            delivery. I combine hands-on AWS cloud experience with disciplined project and
+            process leadership, and colleagues describe me as someone who can "impart knowledge
+            without making one feel inadequate" and who consistently gets things done. I'm
+            looking to bring that same blend of technical depth and people-first leadership to
+            an Engineering Manager role.
+        </p>
+    </section>
+
+    <section class="card">
+        <h2>Current Role</h2>
+        <div class="experience-item">
+            <div class="role">Software Development Leader &amp; Solutions Architect</div>
+            <div class="org">Pompa Program</div>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>Certifications</h2>
+        <ul class="pill-list">
+            <li class="pill-item">AWS Certified Cloud Practitioner (2023–2026)</li>
+            <li class="pill-item">Certified ScrumMaster (CSM)</li>
+            <li class="pill-item">Project Management Professional (PMP)</li>
+            <li class="pill-item">ITIL Foundations</li>
+        </ul>
+
+    </section>
+        <section class="card">
+        <h2>Skills</h2>
+        <ul class="pill-list">
+            <li class="pill-item">AWS - Lambda, ECS (fargate), API Gateway, Aurora RDS, DnamoDB, IAM, VPC, Security Groups etc</li>
+            <li class="pill-item">PHP - Symfony, Laravel </li>
+            <li class="pill-item">Javascript / Typescript - Vue.js, node.js, react, next.js, nest.js</li>
+            <li class="pill-item">AGILE - Scrum and Kanban</li>
+            <li class="pill-item">Docker</li>
+            <li class="pill-item">People Management</li>
+            <li class="pill-item">Microservice Architecture</li>
+            <li class="pill-item">AI Development - Claude Code CLI, Composer, Co-Pilot</li>
+            <li class="pill-item">AI features - MCP integrations, LLM integration</li>
+            <li class="pill-item">Sass / Paas</li>
+            <li class="pill-item">APIs - Restful API development</li>
+        </ul>
+    </section>
+
+    <section class="card">
+        <h2>Education</h2>
+        <p>MBA - University of Maryland, 2000–2004</p>
+        <p>BA - Old Dominion University, 1988–1992</p>
+    </section>
+
+    <section class="card">
+        <h2>What Colleagues Say</h2>
+        <blockquote>
+            "He has a gift for imparting knowledge without making you feel inadequate, and he
+            gets things done."
+        </blockquote>
+    </section>
+
+    <div class="cta">
+        <a href="https://www.linkedin.com/in/kscottshipman/" target="_blank" rel="noopener">
+            View Full LinkedIn Profile
+        </a>
+    </div>
+{% endblock %}

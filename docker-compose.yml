@@ -1,0 +1,66 @@
+services:
+  php:
+    build:
+      context: ./docker/php
+      dockerfile: Dockerfile
+    container_name: scout_php
+    working_dir: /var/www/html
+    volumes:
+      - ./app:/var/www/html
+    ports:
+      - "${APP_PORT:-8080}:80"
+    environment:
+      APP_ENV: ${APP_ENV:-dev}
+      SYMFONY_VERSION: ${SYMFONY_VERSION:-}
+      DATABASE_URL: "mysql://${MYSQL_USER}:${MYSQL_PASSWORD}@database:3306/${MYSQL_DATABASE}?serverVersion=8.4&charset=utf8mb4"
+      REDIS_URL: "redis://redis:6379"
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    depends_on:
+      database:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    networks:
+      - scout_network
+
+  database:
+    image: mysql:8.4
+    container_name: scout_mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    ports:
+      - "${MYSQL_PORT:-3306}:3306"
+    volumes:
+      - scout_mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${MYSQL_ROOT_PASSWORD}"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    networks:
+      - scout_network
+
+  redis:
+    image: redis:7-alpine
+    container_name: scout_redis
+    restart: unless-stopped
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
+    volumes:
+      - scout_redis_data:/data
+    networks:
+      - scout_network
+
+volumes:
+  scout_mysql_data:
+  scout_redis_data:
+
+networks:
+  scout_network:
+    driver: bridge

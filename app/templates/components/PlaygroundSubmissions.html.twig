@@ -1,0 +1,30 @@
+<div class="submissions" data-controller="playground-modal">
+    <h2>Submissions</h2>
+
+    {% if this.submissions is empty %}
+        <p class="submissions__empty">No submissions yet — be the first!</p>
+    {% else %}
+        <div class="submissions__table-wrap">
+            <table class="submissions-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Created</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for submission in this.submissions %}
+                        {% include 'playground/_row.html.twig' with { submission: submission } only %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+
+    <dialog class="submission-modal" data-playground-modal-target="dialog">
+        <turbo-frame id="submission_modal_frame"></turbo-frame>
+    </dialog>
+</div>

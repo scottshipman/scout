@@ -1,0 +1,40 @@
+{% extends 'layout/app.html.twig' %}
+
+{% block title %}Playground — Kenneth Scott Shipman{% endblock %}
+
+{% block banner_subtitle %}Playground · A small form backed by MySQL{% endblock %}
+
+{% block page_body %}
+    <section class="card">
+        <h2>Playground</h2>
+        <p>Tell me a little about yourself. Submissions are stored for fun — nothing serious.</p>
+
+        {{ form_start(form) }}
+            <div class="form-row">
+                {{ form_label(form.name) }}
+                {{ form_widget(form.name) }}
+                {{ form_errors(form.name) }}
+            </div>
+            <div class="form-row">
+                {{ form_label(form.email) }}
+                {{ form_widget(form.email) }}
+                {{ form_errors(form.email) }}
+            </div>
+            <div class="form-row">
+                {{ form_label(form.favoriteFood) }}
+                {{ form_widget(form.favoriteFood) }}
+                {{ form_errors(form.favoriteFood) }}
+            </div>
+            <div class="form-row">
+                {{ form_label(form.lastTvShow) }}
+                {{ form_widget(form.lastTvShow) }}
+                {{ form_errors(form.lastTvShow) }}
+            </div>
+            {{ form_widget(form.submit) }}
+        {{ form_end(form) }}
+    </section>
+
+    <section class="card">
+        <twig:PlaygroundSubmissions />
+    </section>
+{% endblock %}

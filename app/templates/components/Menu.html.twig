@@ -1,0 +1,19 @@
+<nav class="site-menu">
+    <div class="site-menu__inner">
+        <a class="site-menu__brand" href="{{ path('app_home') }}">Kenneth Scott Shipman</a>
+        <ul class="site-menu__items">
+            {% for item in this.items %}
+                <li>
+                    {% if item.external %}
+                        <a href="{{ item.path }}" target="_blank" rel="noopener">{{ item.label }}</a>
+                    {% else %}
+                        <a href="{{ path(item.path) }}"
+                           class="{{ app.request.attributes.get('_route') == item.path ? 'is-active' : '' }}">
+                            {{ item.label }}
+                        </a>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+    <defs>
+        <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#0a1a2f" />
+            <stop offset="100%" stop-color="#0b3d6c" />
+        </linearGradient>
+        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1c4d7c" stroke-width="1" opacity="0.5" />
+        </pattern>
+    </defs>
+
+    <rect width="800" height="450" fill="url(#bg)" />
+    <rect width="800" height="450" fill="url(#grid)" />
+
+    <g stroke="#3f8fd6" stroke-width="2" fill="none" opacity="0.55">
+        <path d="M40 60 H200 V140 H360" />
+        <path d="M120 60 V20" />
+        <path d="M360 140 V220 H520" />
+        <path d="M520 220 V320 H680" />
+        <path d="M200 140 V260 H80 V380" />
+        <path d="M600 60 H760 V180" />
+        <path d="M680 320 V400" />
+        <path d="M40 60 V180 H120 V300" />
+    </g>
+
+    <g fill="#7ec4ff">
+        <circle cx="40" cy="60" r="6" />
+        <circle cx="200" cy="60" r="6" />
+        <circle cx="200" cy="140" r="6" />
+        <circle cx="360" cy="140" r="6" />
+        <circle cx="120" cy="20" r="5" />
+        <circle cx="360" cy="220" r="6" />
+        <circle cx="520" cy="220" r="6" />
+        <circle cx="520" cy="320" r="6" />
+        <circle cx="680" cy="320" r="6" />
+        <circle cx="80" cy="260" r="6" />
+        <circle cx="80" cy="380" r="5" />
+        <circle cx="600" cy="60" r="6" />
+        <circle cx="760" cy="60" r="5" />
+        <circle cx="760" cy="180" r="6" />
+        <circle cx="680" cy="400" r="5" />
+        <circle cx="120" cy="180" r="6" />
+        <circle cx="120" cy="300" r="5" />
+    </g>
+
+    <g fill="#dff0ff" opacity="0.5" font-family="monospace" font-size="14">
+        <text x="420" y="70">01101</text>
+        <text x="600" y="260">10110</text>
+        <text x="160" y="360">01011</text>
+        <text x="300" y="400">11001</text>
+    </g>
+</svg>

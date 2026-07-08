@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block banner_title %}Kenneth Scott Shipman{% endblock %}
+{% block banner_subtitle %}Experienced Software Development Director & Solutions Architect, AWS Cloud{% endblock %}
+
+{% block stylesheets %}
+    {% block page_stylesheets %}{% endblock %}
+{% endblock %}
+
+{% block body %}
+    <twig:Banner title="{{ block('banner_title') }}" subtitle="{{ block('banner_subtitle') }}" />
+    <twig:Menu />
+    <twig:FlashPopup />
+
+    <main class="page">
+        {% block page_body %}{% endblock %}
+    </main>
+{% endblock %}

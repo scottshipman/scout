@@ -1,0 +1,12 @@
+<tr id="submission_row_{{ submission.id }}">
+    <td>{{ submission.id }}</td>
+    <td>{{ submission.name }}</td>
+    <td>{{ submission.email }}</td>
+    <td>{{ submission.dateCreated|date('M j, Y g:ia') }}</td>
+    <td>
+        <a href="{{ path('app_playground_edit', {id: submission.id}) }}"
+           data-turbo-frame="submission_modal_frame"
+           data-action="click->playground-modal#open"
+           class="submissions-table__edit">Edit</a>
+    </td>
+</tr>

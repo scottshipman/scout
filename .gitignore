@@ -1,0 +1,9 @@
+# Local environment overrides (contains credentials/ports for this machine)
+/.env
+
+# OS / editor cruft
+.DS_Store
+*.swp
+
+# Claude Code local (machine-specific) settings
+/.claude/settings.local.json

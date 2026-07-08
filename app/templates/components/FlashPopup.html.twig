@@ -1,0 +1,11 @@
+{% set flashes = app.flashes('success') %}
+{% if flashes is not empty %}
+    <dialog class="flash-modal" data-controller="flash-modal">
+        <div class="flash-modal__content">
+            {% for message in flashes %}
+                <p>{{ message }}</p>
+            {% endfor %}
+            <button type="button" class="flash-modal__close" data-action="flash-modal#close">Close</button>
+        </div>
+    </dialog>
+{% endif %}

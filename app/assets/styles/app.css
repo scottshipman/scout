@@ -1,0 +1,252 @@
+body {
+    background-color: #f4f6f8;
+    color: #1a1f27;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Site menu */
+.site-menu {
+    background: #0b3d6c;
+}
+
+.site-menu__inner {
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.site-menu__brand {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 0.9rem 0;
+}
+
+.site-menu__items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.site-menu__items a {
+    display: inline-block;
+    color: #cfe3fa;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.9rem 0;
+    border-bottom: 2px solid transparent;
+}
+
+.site-menu__items a:hover,
+.site-menu__items a.is-active {
+    color: #fff;
+    border-bottom-color: #7ec4ff;
+}
+
+/* Site banner */
+.site-banner {
+    background-image: linear-gradient(135deg, rgba(10, 26, 47, 0.85), rgba(11, 61, 108, 0.85)), url('../images/banner-tech-bg.svg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+.site-banner__inner {
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+}
+
+.site-banner__inner h1 {
+    margin: 0 0 0.25rem;
+    font-size: 2rem;
+}
+
+.site-banner__inner p {
+    margin: 0;
+    font-size: 1.1rem;
+    opacity: 0.92;
+}
+
+/* Shared page shell */
+.page {
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+}
+
+section.card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.75rem 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+section.card h2 {
+    margin-top: 0;
+    font-size: 1.25rem;
+    color: #0a66c2;
+}
+
+/* Forms */
+.form-row {
+    margin-bottom: 1.25rem;
+}
+
+.form-row label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+}
+
+.form-row input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.form-row .form-error {
+    color: #b91c1c;
+    font-size: 0.85rem;
+    margin-top: 0.35rem;
+}
+
+button[type="submit"] {
+    background: #0a66c2;
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    padding: 0.7rem 1.75rem;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button[type="submit"]:hover {
+    background: #084e96;
+}
+
+.form-cancel {
+    display: inline-block;
+    margin-left: 1rem;
+    color: #4b5563;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.form-cancel:hover {
+    text-decoration: underline;
+}
+
+/* Submissions table */
+.submissions__empty {
+    color: #6b7280;
+}
+
+.submissions__table-wrap {
+    overflow-x: auto;
+}
+
+.submissions-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+}
+
+.submissions-table th,
+.submissions-table td {
+    text-align: left;
+    padding: 0.6rem 0.75rem;
+    border-bottom: 1px solid #e5e7eb;
+    white-space: nowrap;
+}
+
+.submissions-table th {
+    color: #6b7280;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.submissions-table__edit {
+    color: #0a66c2;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.submissions-table__edit:hover {
+    text-decoration: underline;
+}
+
+/* Flash confirmation popup */
+.flash-modal {
+    border: none;
+    border-radius: 12px;
+    padding: 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.flash-modal::backdrop {
+    background: rgba(10, 26, 47, 0.55);
+}
+
+.flash-modal__content {
+    padding: 1.75rem 2rem;
+    text-align: center;
+    min-width: 280px;
+}
+
+.flash-modal__content p {
+    margin: 0 0 1rem;
+    color: #065f46;
+    font-weight: 600;
+}
+
+.flash-modal__close {
+    background: #0a66c2;
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    padding: 0.5rem 1.5rem;
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+.flash-modal__close:hover {
+    background: #084e96;
+}
+
+/* Submission edit popup */
+turbo-frame {
+    display: block;
+}
+
+.submission-modal {
+    border: none;
+    border-radius: 12px;
+    padding: 0;
+    width: min(480px, 90vw);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.submission-modal::backdrop {
+    background: rgba(10, 26, 47, 0.55);
+}
+
+.submission-modal .card {
+    box-shadow: none;
+    margin-bottom: 0;
+}

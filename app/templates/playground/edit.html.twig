@@ -1,0 +1,38 @@
+{% extends 'layout/app.html.twig' %}
+
+{% block title %}Edit Submission — Kenneth Scott Shipman{% endblock %}
+
+{% block banner_subtitle %}Playground · Editing a submission{% endblock %}
+
+{% block page_body %}
+    <turbo-frame id="submission_modal_frame">
+        <section class="card">
+            <h2>Edit Submission</h2>
+
+            {{ form_start(form, { action: path('app_playground_edit', { id: submission.id }) }) }}
+                <div class="form-row">
+                    {{ form_label(form.name) }}
+                    {{ form_widget(form.name) }}
+                    {{ form_errors(form.name) }}
+                </div>
+                <div class="form-row">
+                    {{ form_label(form.email) }}
+                    {{ form_widget(form.email) }}
+                    {{ form_errors(form.email) }}
+                </div>
+                <div class="form-row">
+                    {{ form_label(form.favoriteFood) }}
+                    {{ form_widget(form.favoriteFood) }}
+                    {{ form_errors(form.favoriteFood) }}
+                </div>
+                <div class="form-row">
+                    {{ form_label(form.lastTvShow) }}
+                    {{ form_widget(form.lastTvShow) }}
+                    {{ form_errors(form.lastTvShow) }}
+                </div>
+                {{ form_widget(form.submit) }}
+                <a href="{{ path('app_playground') }}" data-turbo-frame="_top" class="form-cancel">Cancel</a>
+            {{ form_end(form) }}
+        </section>
+    </turbo-frame>
+{% endblock %}

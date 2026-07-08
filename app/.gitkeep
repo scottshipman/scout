@@ -1,0 +1,4 @@
+This directory is intentionally empty.
+
+On first `docker-compose up`, the php container will bootstrap a fresh
+Symfony application here automatically (see docker/php/entrypoint.sh).
