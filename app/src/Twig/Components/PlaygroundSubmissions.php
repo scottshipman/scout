@@ -9,7 +9,7 @@ use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 #[AsTwigComponent]
 class PlaygroundSubmissions
 {
-    public function __construct(PlaygroundSubmitRepository $repository)
+    public function __construct(private PlaygroundSubmitRepository $repository)
     {
     }
 
